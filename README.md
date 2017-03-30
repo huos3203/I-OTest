@@ -1,3 +1,6 @@
+# NSPathUtilities.h 管理路径
+包含了对NSString类的扩展，从而为NSString类新增了一些专门用于操作路径的方法，这些方法的主要作用就是更方便的操作路径。
+
 # I-OTest
 在Terminal(终端) 运行oc测试程序
 
