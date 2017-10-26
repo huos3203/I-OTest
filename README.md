@@ -52,13 +52,20 @@ int main(int argc, const char * argv[]) {
 cc 文件名 －framework Foundation 
 cc -framework Foundation 文件名 
 ```
--o 参数 可以自定义一个名字，来代替a.out 
+-o 参数 可以自定义一个名字，来代替a.out
+-g 参数 支持lldb下查看文件/函数源码`list 文件名`/`list 函数名`。
 ```
-cc -framework Foundation tmp.m -o app 
+cc -framework Foundation tmp.m -g -o tmp.app 
 ```
 ## 开始执行
 ```
-./a.out  或  ./app
+./a.out  或  ./`tmp.app`
+```
+## 使用lldb调试`tmp.app`
+```
+lldb tmp.app   //lldb调试器装载tmp.app
+(lldb)breakpoint set -f Tmp.m -l 6 //设置断点
+(lldb)run   //启动tmp.app / 启动后，程序会停在上述设置的断点位置，这是便可以愉快的断点调试了
 ```
 # 扩展
 [sqlite3命令](http://www.runoob.com/sqlite/sqlite-create-database.html)
