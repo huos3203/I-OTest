@@ -67,6 +67,37 @@ lldb tmp.app   //lldb调试器装载tmp.app
 (lldb)breakpoint set -f Tmp.m -l 6 //设置断点
 (lldb)run   //启动tmp.app / 启动后，程序会停在上述设置的断点位置，这是便可以愉快的断点调试了
 ```
+
+## swift源码文件编译和lldb调试
+1. 新建`tmp.swift`文件。 
+```
+vi tmp.swift
+```
+2. 写入测试代码
+```
+let i = 99
+let nnn = “nihao”
+print(“\(i)====\(nn)”)
+```
+3. 使用`swiftc`编译`tmp.swift`
+```
+swiftc tmp.swift -g -o swift.app
+```
+4. lldb 装载`swift.app`设置断点
+```
+lldb swift.app			//装载app
+(lldb)breakpoint set -f tmp.swift -d 2  /设置断点
+(lldb)run		 //启动app
+(lldb)c/n/s  //断点操作：继续/单步/进入
+```
+
+
+
+
+
+
+
+
 # 扩展
 [sqlite3命令](http://www.runoob.com/sqlite/sqlite-create-database.html)
 ```
